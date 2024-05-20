@@ -292,13 +292,14 @@ a{
 
 .scoreDiv{
     display: flex;
+    flex-direction: column;
     padding-top:50px;
     padding-left: 20px;
     width:90%;
     height:100%;
     margin: auto;
     font-size: large;
-    border: solid black;
+    
 }
 
 .lessonVid{
@@ -311,10 +312,11 @@ a{
 }
 .lessonContent{
     display: flex;
-    justify-content: center;
     align-items: center;
-    width:100%;
-    margin: auto;
+    width:90%;
+    margin-top: 50px;
+    margin-inline: auto;
     flex-direction: column;
     padding:10px;
+    background-color: #ffffff98;
 }

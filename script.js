@@ -222,8 +222,8 @@ function alphabetQuiz(){
         
         var tempArr=[];
         var tempArrStr="";
-        const d = new Date();
         
+<<<<<<< Updated upstream
         if(JSON.parse(window.localStorage.getItem("alphaScore"))!=null){
             
             tempArr = [JSON.parse(window.localStorage.getItem("alphaScore"))];
@@ -233,8 +233,27 @@ function alphabetQuiz(){
         
             tempArr=[latest];
         }
+=======
+        
+            console.log(JSON.parse(window.sessionStorage.getItem("alphaScore")));
+        
+            if(JSON.parse(window.sessionStorage.getItem("alphaScore"))!=null){
+                tempArr = JSON.parse(window.sessionStorage.getItem("alphaScore"));
+            }
+            
+            const date = new Date();
+
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let timeH = date.getHours();
+            let timeM = date.getMinutes();
+
+            var dateTimeNow = day+'/'+month+'/'+year +' '+timeH+':'+timeM;
+        
+>>>>>>> Stashed changes
             //document.cookie='Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
-            var latest = 'Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
+            var latest = 'Quiz: Alphabet | Time: '+dateTimeNow+' | Score: '+score;
         
             if(tempArr!=null){
                 tempArr.push(latest);
@@ -245,10 +264,15 @@ function alphabetQuiz(){
             
             tempArrStr = JSON.stringify(tempArr);
 
-            localStorage.setItem("alphaScore",tempArrStr);
+            window.sessionStorage.setItem("alphaScore",tempArrStr);
         
+            console.log(JSON.parse(window.sessionStorage.getItem("alphaScore")));
+        
+<<<<<<< Updated upstream
             console.log(localStorage.getItem("alphaScore"));
         
+=======
+>>>>>>> Stashed changes
         
         
     }
