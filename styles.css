@@ -47,6 +47,7 @@ a{
     overflow-y: scroll;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    padding-bottom: 50px;
 }
 .contentFrame::-webkit-scrollbar{
     right: 0;
