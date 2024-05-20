@@ -224,15 +224,15 @@ function alphabetQuiz(){
         var tempArrStr="";
         const d = new Date();
         
-        try{
+        if(JSON.parse(window.localStorage.getItem("alphaScore"))!=null){
+            
             tempArr = [JSON.parse(window.localStorage.getItem("alphaScore"))];
         }
-        catch{
+        else{
             var latest = 'Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
         
             tempArr=[latest];
         }
-        finally{
             //document.cookie='Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
             var latest = 'Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
         
@@ -248,7 +248,7 @@ function alphabetQuiz(){
             localStorage.setItem("alphaScore",tempArrStr);
         
             console.log(localStorage.getItem("alphaScore"));
-        }
+        
         
         
     }
