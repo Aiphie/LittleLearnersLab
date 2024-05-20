@@ -49,7 +49,6 @@ a{
     scrollbar-width: 10px;
     scrollbar-color: #fcda2d #ffffff;
     -ms-overflow-style: none;
-    padding-bottom: 200px;
 }
 .contentFrame::-webkit-scrollbar{
     right: 0;
@@ -348,7 +347,7 @@ a{
     display: flex;
     align-items: center;
     width:90%;
-    margin-block: 30px;
+    margin-top: 50px;
     margin-inline: auto;
     flex-direction: column;
     padding:20px;
