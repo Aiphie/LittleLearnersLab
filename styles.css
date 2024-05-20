@@ -45,11 +45,25 @@ a{
     display: flex;
     flex-direction: column;
     overflow-y: scroll;
-    scrollbar-width: none;
+    overflow-x: hidden;
+    scrollbar-width: 10px;
+    scrollbar-color: #fcda2d #ffffff;
     -ms-overflow-style: none;
 }
 .contentFrame::-webkit-scrollbar{
     right: 0;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#fcda2d;
+    
+}
+::-webkit-scrollbar-thumb :hover{
+    background:#ffb617;
+}
+::-webkit-scrollbar-track{
+    background:#ffffff;
 }
 
 .contentFrame .header{
