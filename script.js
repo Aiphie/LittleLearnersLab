@@ -225,16 +225,24 @@ function alphabetQuiz(){
         const d = new Date();
         
         try{
-            tempArr = JSON.parse(window.localStorage.getItem("alphaScore"));
+            tempArr = [JSON.parse(window.localStorage.getItem("alphaScore"))];
         }
         catch{
-            tempArr=[];
+            var latest = 'Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
+        
+            tempArr=[latest];
         }
         finally{
             //document.cookie='Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
             var latest = 'Quiz: Alphabet | Time: '+d.getDate+'/'+(d.getMonth+1)+'/'+d.getFullYear+' | Score: '+score;
         
-            tempArr.push(latest);
+            if(tempArr!=null){
+                tempArr.push(latest);
+            }
+            else{
+                tempArr=[latest];
+            }
+            
             tempArrStr = JSON.stringify(tempArr);
 
             localStorage.setItem("alphaScore",tempArrStr);
